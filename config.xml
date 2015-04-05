@@ -8,5 +8,8 @@
     <author href="dev.uek.krakow.pl">Maciej Komorowski</author>
     <content src="index.html" />
     <access origin="*" />
-    <icon src="www/img/logo.png" />
+
+    <icon src="www/img/icon.png" />
+    <splash src="www/img/splash.png"/>
+    <preference name="SplashScreenDelay" value="10000" />
 </widget>

@@ -16,12 +16,12 @@
     </feature>
     <name>UEKRoom</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        Application for checking room availability at the Cracow University of Economics.
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
-    </author>
+    <author href="dev.uek.krakow.pl">Maciej Komorowski</author>
     <content src="index.html" />
     <access origin="*" />
-    <icon src="www/img/logo.png" />
+    <icon src="www/img/icon.png" />
+    <splash src="www/img/splash.png" />
+    <preference name="SplashScreenDelay" value="10000" />
 </widget>
