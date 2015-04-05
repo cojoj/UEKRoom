@@ -9,6 +9,7 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+        app.fetchGroups();
     },
     // deviceready Event Handler
     //
@@ -17,16 +18,15 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
     },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+    // Fetch all groups from the Cash API
+    fetchGroups: function() {
+        $.getJSON("http://devplan.uek.krakow.pl/api/groups", function(groups) {
+            $.each(groups, function(index, group) {
+                // console.log(group.name);
+                $("#groups-list").append("<li>" + group.name + "</li>");
+            })
+            $("#groups-list").listview("refresh");
+        });
     }
 };
 
