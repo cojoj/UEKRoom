@@ -1,26 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-        <link type="text/css" rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-        <script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <title>UEKRoom</title>
-    </head>
-    <body>
-        <div data-role="page" class="group-search">
-            <div data-role="header">
-                <h1>Search group</h1>
-            </div>
-            <div data-role="content">
-                <div class="content-primary">   
-                    <ul data-role="listview" data-filter="true" id="groups-list"></ul>
-                </div>
-            </div>
+<head>
+    <meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.css" />
+    <link rel="stylesheet" href="http://cdn.rawgit.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="http://cdn.rawgit.com/jquery/jquery-ui/1.10.4/ui/jquery.ui.datepicker.js"></script>
+    <script type="text/javascript" id="mobile-datepicker" src="http://cdn.rawgit.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.js"></script>
+    <script type="text/javascript" src="http://momentjs.com/downloads/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.js"></script>
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/devplan.js"></script>
+    <script type="text/javascript" src="js/calendar.js"></script>
+
+    <title>UEKRoom</title>
+    <style>
+        .ui-datepicker {
+         z-index: 9999 !important;   
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page" id="Form">
+        <div data-role="header">
+            <h1>Szukaj wolnej sali</h1>
         </div>
-    </body>
+        <div data-role="content">
+            <label for="start-date">Od:</label>
+            <input type="text" data-role="date" id="start-date" name="start-date">
+            <label for="end-date">Do:</label>
+            <input type="text" data-role="date" id="end-date" name="end-date">
+            <label><input type="checkbox" id="internal-only" name="internal-only" checked/> Wyszukaj sale tylko w Krakowie </label>
+            <label><input type="checkbox" id="include-labs" name="include-labs" name="checkbox-0" /> Uwzględnij pracownie komputerowe</label>
+            <ul data-role="listview" data-filter="true" id="groups-list" data-filter-placeholder="Wyszukaj grupę"></ul>
+        </div>
+    </div>
+    <div data-role="page" id="Result">
+        <div data-role="header">
+            <h1>Dostępne sale</h1>
+        </div>
+        <div data-role="content">
+            <p>Resultat</p>
+            <div id="calendar">Brak wyników</div>
+        </div>
+    </div>
+</body>
 </html>
