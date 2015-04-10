@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>96F7467F-5E3A-45D8-B8A2-8BC599CD6DB6</string>
+	<key>IDESourceControlProjectName</key>
+	<string>UEKRoom</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CC53EFEBD359EF0D70F35DF7321C9384F0AD415D</key>
+		<string>https://github.com/cojoj/UEKRoom.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>platforms/ios/UEKRoom.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CC53EFEBD359EF0D70F35DF7321C9384F0AD415D</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/cojoj/UEKRoom.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CC53EFEBD359EF0D70F35DF7321C9384F0AD415D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CC53EFEBD359EF0D70F35DF7321C9384F0AD415D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>UEKRoom</string>
+		</dict>
+	</array>
+</dict>
+</plist>
