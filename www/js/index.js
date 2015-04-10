@@ -9,14 +9,17 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        app.fetchGroups();
+        this.fetchGroups();
     },
     // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        app.printDeviceInfo();
+    },
+    printDeviceInfo: function() {
+        var model = '<p><b>Model: </b>' + device.model + '</p>';
+        var platform = '<p><b>Platforma: </b>' + device.platform + '</p>';
+        var uuid = '<p><b>UUID: </b>' + device.uuid + '</p>';
+        $('#info').append(model + platform + uuid);
     },
     // Fetch all groups from the Cash API
     fetchGroups: function() {
@@ -54,7 +57,5 @@ var app = {
         });
     }
 };
-
-
 
 app.initialize();

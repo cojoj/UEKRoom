@@ -10,4 +10,7 @@
     <content src="index.html" />
     <access origin="*" />
     <icon src="www/img/icon.png" />
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
 </widget>
