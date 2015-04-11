@@ -40,6 +40,9 @@
 		7E7966E71810823500FA85AD /* icon-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966DD1810823500FA85AD /* icon-small@2x.png */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
 		95F78A7F90204B1D9B660B6D /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B6C06721AB489289121A0B /* CDVDevice.m */; };
+		72738E4859014D9AADC097FC /* CDVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = A75A7F67AEF04B6180F51213 /* CDVConnection.m */; };
+		5872A62E40174A32A0A93356 /* CDVReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B767941B2646ADB9DC0050 /* CDVReachability.m */; };
+		75452A0188A34FD994444526 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EDF9CB3F7D46B6B1ACFA4E /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,11 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "UEKRoom/config.xml"; sourceTree = "<group>"; };
 		C6B6C06721AB489289121A0B /* CDVDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVDevice.m"; path = "org.apache.cordova.device/CDVDevice.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		37F41A62D6C0478798242F9F /* CDVDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVDevice.h"; path = "org.apache.cordova.device/CDVDevice.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		A75A7F67AEF04B6180F51213 /* CDVConnection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVConnection.m"; path = "org.apache.cordova.network-information/CDVConnection.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		31B767941B2646ADB9DC0050 /* CDVReachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVReachability.m"; path = "org.apache.cordova.network-information/CDVReachability.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		B57A92A1829242BBA97D3CFF /* CDVConnection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVConnection.h"; path = "org.apache.cordova.network-information/CDVConnection.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		A618216BC3734DEAAD8FA52B /* CDVReachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVReachability.h"; path = "org.apache.cordova.network-information/CDVReachability.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		A6EDF9CB3F7D46B6B1ACFA4E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,7 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
+				75452A0188A34FD994444526 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +199,7 @@
 				5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
+				A6EDF9CB3F7D46B6B1ACFA4E /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,6 +217,10 @@
 			children = (
 				C6B6C06721AB489289121A0B /* CDVDevice.m */,
 				37F41A62D6C0478798242F9F /* CDVDevice.h */,
+				A75A7F67AEF04B6180F51213 /* CDVConnection.m */,
+				31B767941B2646ADB9DC0050 /* CDVReachability.m */,
+				B57A92A1829242BBA97D3CFF /* CDVConnection.h */,
+				A618216BC3734DEAAD8FA52B /* CDVReachability.h */,
 			);
 			name = Plugins;
 			path = "UEKRoom/Plugins";
@@ -392,6 +406,8 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				95F78A7F90204B1D9B660B6D /* CDVDevice.m in Sources */,
+				72738E4859014D9AADC097FC /* CDVConnection.m in Sources */,
+				5872A62E40174A32A0A93356 /* CDVReachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

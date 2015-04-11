@@ -9,11 +9,20 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
-        this.fetchGroups();
     },
     // deviceready Event Handler
     onDeviceReady: function() {
         app.printDeviceInfo();
+        app.fetchGroups();
+    },
+    checkInternetConnection: function(callback) {
+        var networkState = navigator.connection.type;
+
+        if (networkState == Connection.NONE) {
+            alert('Nie masz połączenia z internetem');
+        } else {
+            callback();
+        };
     },
     printDeviceInfo: function() {
         var model = '<p><b>Model: </b>' + device.model + '</p>';
@@ -23,12 +32,13 @@ var app = {
     },
     // Fetch all groups from the Cash API
     fetchGroups: function() {
-        $.getJSON("http://devplan.uek.krakow.pl/api/groups", function(groups) {
-            $.each(groups, function(index, group) {
-                // console.log(group.name);
-                $("#groups-list").append('<li><a href="#" onclick="app.search(this)" data-id="' +  group.id + '">' + group.name + '</a></li>');
-            })
-            $("#groups-list").listview("refresh");
+        app.checkInternetConnection(function() {
+            $.getJSON("http://devplan.uek.krakow.pl/api/groups", function(groups) {
+                $.each(groups, function(index, group) {
+                    $("#groups-list").append('<li><a href="#" onclick="app.search(this)" data-id="' +  group.id + '">' + group.name + '</a></li>');
+                });
+                $("#groups-list").listview("refresh");
+            });
         });
     },
     search: function(group) {

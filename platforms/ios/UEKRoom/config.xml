@@ -17,6 +17,9 @@
     <feature name="Device">
         <param name="ios-package" value="CDVDevice" />
     </feature>
+    <feature name="NetworkStatus">
+        <param name="ios-package" value="CDVConnection" />
+    </feature>
     <splash height="480" src="www/img/splash.png" width="320" />
     <splash height="960" src="www/img/splash.png" width="640" />
     <splash height="1024" src="www/img/splash.png" width="768" />

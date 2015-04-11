@@ -1,7 +1,9 @@
 var devPlan = {
   availablePlaces: function(params, callback) {
-    $.getJSON("http://cash.dev.uek.krakow.pl/api/places/available", params, function(dates) {
-      callback(devPlan.parse(params, dates));
+    app.checkInternetConnection(function() {
+      $.getJSON("http://cash.dev.uek.krakow.pl/api/places/available", params, function(dates) {
+        callback(devPlan.parse(params, dates));
+      });
     });
   },
   parse: function(params, data) {
