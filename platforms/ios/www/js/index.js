@@ -32,14 +32,23 @@ var app = {
     },
     // Fetch all groups from the Cash API
     fetchGroups: function() {
-        app.checkInternetConnection(function() {
-            $.getJSON("http://devplan.uek.krakow.pl/api/groups", function(groups) {
-                $.each(groups, function(index, group) {
-                    $("#groups-list").append('<li><a href="#" onclick="app.search(this)" data-id="' +  group.id + '">' + group.name + '</a></li>');
+        if (window.localStorage.getItem('groupsJSON') == null) {
+            app.checkInternetConnection(function() {
+                $.getJSON("http://devplan.uek.krakow.pl/api/groups", function(groups) {
+                    $.each(groups, function(index, group) {
+                        $("#groups-list").append('<li><a href="#" onclick="app.search(this)" data-id="' +  group.id + '">' + group.name + '</a></li>');
+                    });
+                    $("#groups-list").listview("refresh");
+                    window.localStorage.setItem('groupsJSON', JSON.stringify(groups));
                 });
-                $("#groups-list").listview("refresh");
             });
-        });
+        } else {
+            var groups = JSON.parse(window.localStorage.getItem('groupsJSON'));
+            $.each(groups, function(index, group) {
+                $("#groups-list").append('<li><a href="#" onclick="app.search(this)" data-id="' +  group.id + '">' + group.name + '</a></li>');
+            });
+            $("#groups-list").listview("refresh");
+        };
     },
     search: function(group) {
 
