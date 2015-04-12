@@ -8,10 +8,11 @@ var calendar = {
     var daysShort =  ['Nie', 'Pon', 'Wto', 'Śro', 'Czw', 'Pią', 'Sob'];
 
     if (data.length == 0) {
-      return;
+       $holder.html('<h4>Brak wyników</h4>');
+       return;
     }
 
-    $holder.empty().fullCalendar({
+    $holder.fullCalendar({
       defaultDate: new Date(data[0].date),
       monthNames: months,
       monthNamesShort: monthsShort,
@@ -22,34 +23,32 @@ var calendar = {
         today:    'dzisiaj',
         month:    'miesiąc',
         week:     'tydzień',
-        day:      'dzień'
+        day:      'dzień',
+        prev:     'Poprzedni',
+        next:     'Następny'
       },
       firstDay: 1,
       allDaySlot: false,
       theme: true,
       header: {
-        left: 'prev,next today',
+        left: 'prev',
         center: 'title',
-        right: 'month, agendaWeek'
+        right: 'next'
       },
-      defaultView: 'month',
+      defaultView: 'basicWeek',
       slotMinutes: 15,
       dragOpacity: "0.5",
       timeFormat: 'H(:mm)',
       eventLimit: true,
-      editable: true,
       events: data,
       eventClick: function(event) {
-        alert(event);
-        // var modal = $("#modal");
-        // var date = new Date(event.start);
-        // modal.find(".modal-title").html(days[date.getDay()] + ',  '
-        //   + date.getUTCDate() + '  ' + months[date.getMonth()]
-        //   + '   ' + date.getFullYear()
-        //   + '  (' + date.getUTCHours() + ':' + date.getMinutes()
-        //     + event.title + ')');
-        // modal.find(".modal-body").html(event.description);
-        // modal.modal();
+        var popup = $("#popup-result");
+        var date = new Date(event.start);
+
+        contentHtml = '<h4>' + moment(date).format('DD.MM.YYYY, h:mm') + '<h4>';
+        contentHtml += event.description;
+
+        popup.html(contentHtml).popup( 'open' );
       }
     })
 }

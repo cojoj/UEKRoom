@@ -70,25 +70,31 @@ var app = {
         var groupId = $(group).data('id'),
             startDate = $('#start-date').val(),
             endDate = $('#end-date').val(),
-            internalOnly = $('#internal-only').attr(':checked'),
-            includeLabs = $('#include-labs').attr(':checked');
+            internalOnly = $('#internal-only').is(':checked');
+            includeLabs = $('#include-labs').is(':checked');
 
         if (!groupId || !startDate || !endDate) {
             alert('Wypełnij wszystie pola');
             return;
         }
 
+        console.log($('#internal-only'));
+
         var params = {
             'group_id': [groupId],
-            'start_date': $.datepicker.formatDate("yy-mm-dd", new Date(startDate)),
-            'end_date': $.datepicker.formatDate("yy-mm-dd", new Date(endDate)),
+            'start_date': moment(new Date(startDate)).format('YYYY-MM-DD'),
+            'end_date': moment(new Date(endDate)).format('YYYY-MM-DD'),
             'internal_only': internalOnly,
             'include_labs': includeLabs
         }
 
-        devPlan.availablePlaces(params, function(dates) {
-            calendar.bind($('#calendar'), dates);
+        devPlan.availablePlaces(params, function(dates) {            
             $.mobile.changePage('#Result');
+            var $wrapper = $('#calendar-wrapper').html('Wyszukuje ...');
+            setTimeout(function() {
+                $wrapper.empty().append('<div id="calendar"></div>');
+                calendar.bind($('#calendar'), dates);
+            }, 500);
         });
     }
 };
