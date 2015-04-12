@@ -2,6 +2,13 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        this.loadUi();
+    },
+    loadUi: function() {
+        $(function() {
+            $('#start-date').val(moment().format('YYYY-MM-DD'));
+            $('#end-date').val(moment().add(1, 'weeks').format('YYYY-MM-DD'));
+        });
     },
     // Bind Event Listeners
     //
@@ -19,28 +26,26 @@ var app = {
     checkInternetConnection: function(callback) {
         var networkState = navigator.connection.type;
 
-        if (networkState == Connection.NONE) {
-            alert('Nie masz połączenia z internetem');
-        } else {
+        if (networkState != Connection.NONE || device.platform == 'browser') {
             callback();
+        } else {
+            alert('Aplikacja wymaga połączenia z internetem');
         };
     },
     printLocationInfo: function() {
         navigator.geolocation.getCurrentPosition(function(position) {
-            $('#info').append('<p><b>Lokalizacja: </b>' + position.coords.latitude + ', ' + position.coords.longitude + '</p>');
-        }, function() {
-            $('#info').append('<p><b>Lokalizacja: </b>Nie udało się zlokalizować urządzenia</p>');
+            $('.device-position').append('<p><b>Lokalizacja: </b>' + position.coords.latitude + ', ' + position.coords.longitude + '</p>');
         });
     },
     printDeviceInfo: function() {
         var model = '<p><b>Model: </b>' + device.model + '</p>';
         var platform = '<p><b>Platforma: </b>' + device.platform + '</p>';
         var uuid = '<p><b>UUID: </b>' + device.uuid + '</p>';
-        $('#info').append(model + platform + uuid);
+        $('.device-info').append(model + platform + uuid);
     },
     // Fetch all groups from the Cash API
     fetchGroups: function() {
-        if (window.localStorage.getItem('groupsJSON') == null) {
+        if (!window.localStorage.getItem('groupsJSON')) {
             ActivityIndicator.show('Pobieram listę grup...');
             app.checkInternetConnection(function() {
                 $.getJSON("http://devplan.uek.krakow.pl/api/groups", function(groups) {
@@ -70,6 +75,7 @@ var app = {
 
         if (!groupId || !startDate || !endDate) {
             alert('Wypełnij wszystie pola');
+            return;
         }
 
         var params = {
