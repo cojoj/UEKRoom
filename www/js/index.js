@@ -33,12 +33,14 @@ var app = {
     // Fetch all groups from the Cash API
     fetchGroups: function() {
         if (window.localStorage.getItem('groupsJSON') == null) {
+            ActivityIndicator.show('Pobieram listę grup...');
             app.checkInternetConnection(function() {
                 $.getJSON("http://devplan.uek.krakow.pl/api/groups", function(groups) {
                     $.each(groups, function(index, group) {
                         $("#groups-list").append('<li><a href="#" onclick="app.search(this)" data-id="' +  group.id + '">' + group.name + '</a></li>');
                     });
                     $("#groups-list").listview("refresh");
+                    ActivityIndicator.hide();
                     window.localStorage.setItem('groupsJSON', JSON.stringify(groups));
                 });
             });

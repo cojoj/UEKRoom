@@ -15,6 +15,10 @@
                         {
                             "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"ActivityIndicator\"><param name=\"android-package\" value=\"org.apache.cordova.plugin.ActivityIndicator\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -36,6 +40,9 @@
             "PACKAGE_NAME": "pl.krakow.uek.dev.uekroom"
         },
         "org.apache.cordova.network-information": {
+            "PACKAGE_NAME": "pl.krakow.uek.dev.uekroom"
+        },
+        "org.apache.cordova.plugin.ActivityIndicator": {
             "PACKAGE_NAME": "pl.krakow.uek.dev.uekroom"
         }
     },

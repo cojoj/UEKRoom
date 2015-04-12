@@ -10,5 +10,26 @@
             "type": "registry",
             "id": "org.apache.cordova.network-information"
         }
+    },
+    "hu.dpal.phonegap.plugins.SpinnerDialog": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Paldom/SpinnerDialog.git",
+            "subdir": "."
+        }
+    },
+    "com.sharinglabs.cordova.plugin.datepicker": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Sharinglabs/cordova-plugin-datepicker",
+            "subdir": "."
+        }
+    },
+    "org.apache.cordova.plugin.ActivityIndicator": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Initsogar/cordova-activityindicator",
+            "subdir": "."
+        }
     }
 }
