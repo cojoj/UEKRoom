@@ -1,0 +1,28 @@
+{
+  "name": "UEKRoom",
+  "version": "0.0.1",
+  "description": "This is a simple [Phonegap](http://phonegap.com) application which was written for the academic purposes. It's only responsibilty is to allow user to check available rooms at the Cracow University of Economics for specified dean group.",
+  "main": "www/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cojoj/UEKRoom.git"
+  },
+  "author": [
+    "Maciej Komorowski",
+    "Mateusz Zając"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cojoj/UEKRoom/issues"
+  },
+  "homepage": "https://github.com/cojoj/UEKRoom",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-exec": "^2.1.1",
+    "gulp-shell": "^0.4.0",
+    "gulp-watch": "^4.2.4"
+  }
+}
