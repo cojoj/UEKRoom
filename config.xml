@@ -9,6 +9,10 @@
     <content src="index.html" />
     <access origin="*" />
 
+    <preference name="StatusBarOverlaysWebView" value="false"/>
+    <preference name="StatusBarBackgroundColor" value="#000000"/>
+    <preference name="StatusBarStyle" value="lightcontent" />
+
     <icon src="www/img/icon.png" />
     
     <platform name="android">

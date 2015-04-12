@@ -31,5 +31,11 @@
             "url": "https://github.com/Initsogar/cordova-activityindicator",
             "subdir": "."
         }
+    },
+    "org.apache.cordova.statusbar": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.statusbar"
+        }
     }
 }

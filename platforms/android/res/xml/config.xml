@@ -19,4 +19,8 @@
     <feature name="ActivityIndicator">
         <param name="android-package" value="org.apache.cordova.plugin.ActivityIndicator" />
     </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

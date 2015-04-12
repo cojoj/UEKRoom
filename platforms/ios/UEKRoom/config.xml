@@ -23,6 +23,11 @@
     <feature name="ActivityIndicator">
         <param name="ios-package" value="ActivityIndicator" />
     </feature>
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <preference name="StatusBarOverlaysWebView" value="true" />
     <splash height="480" src="www/img/splash.png" width="320" />
     <splash height="960" src="www/img/splash.png" width="640" />
     <splash height="1024" src="www/img/splash.png" width="768" />
@@ -40,5 +45,8 @@
     <author href="dev.uek.krakow.pl">Maciej Komorowski</author>
     <content src="index.html" />
     <access origin="*" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#000000" />
+    <preference name="StatusBarStyle" value="lightcontent" />
     <icon src="www/img/icon.png" />
 </widget>

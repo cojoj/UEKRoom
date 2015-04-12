@@ -45,6 +45,7 @@
 		75452A0188A34FD994444526 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EDF9CB3F7D46B6B1ACFA4E /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C4DC899BD4CA468F98AB54A5 /* ActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DD880B0D89400694DFFA07 /* ActivityIndicator.m */; };
 		0C78909A45C94EDFA17AE724 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 69E63CC2F790415982E317F9 /* MBProgressHUD.m */; };
+		E7B36E8B8D594619B250A0FE /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C6E932E2F249609E2848FE /* CDVStatusBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,8 @@
 		69E63CC2F790415982E317F9 /* MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MBProgressHUD.m"; path = "org.apache.cordova.plugin.ActivityIndicator/MBProgressHUD.m"; sourceTree = "<group>"; fileEncoding = 4; };
 		4EF54F29AA794C8994B51DE3 /* ActivityIndicator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ActivityIndicator.h"; path = "org.apache.cordova.plugin.ActivityIndicator/ActivityIndicator.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		D4EA165B69F44A818660771C /* MBProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MBProgressHUD.h"; path = "org.apache.cordova.plugin.ActivityIndicator/MBProgressHUD.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		77C6E932E2F249609E2848FE /* CDVStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVStatusBar.m"; path = "org.apache.cordova.statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		BDED515139584D17AFE92081 /* CDVStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVStatusBar.h"; path = "org.apache.cordova.statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +234,8 @@
 				69E63CC2F790415982E317F9 /* MBProgressHUD.m */,
 				4EF54F29AA794C8994B51DE3 /* ActivityIndicator.h */,
 				D4EA165B69F44A818660771C /* MBProgressHUD.h */,
+				77C6E932E2F249609E2848FE /* CDVStatusBar.m */,
+				BDED515139584D17AFE92081 /* CDVStatusBar.h */,
 			);
 			name = Plugins;
 			path = "UEKRoom/Plugins";
@@ -420,6 +425,7 @@
 				5872A62E40174A32A0A93356 /* CDVReachability.m in Sources */,
 				C4DC899BD4CA468F98AB54A5 /* ActivityIndicator.m in Sources */,
 				0C78909A45C94EDFA17AE724 /* MBProgressHUD.m in Sources */,
+				E7B36E8B8D594619B250A0FE /* CDVStatusBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

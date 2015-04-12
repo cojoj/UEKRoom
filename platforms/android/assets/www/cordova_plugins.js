@@ -28,6 +28,13 @@ module.exports = [
         "clobbers": [
             "ActivityIndicator"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.statusbar/www/statusbar.js",
+        "id": "org.apache.cordova.statusbar.statusbar",
+        "clobbers": [
+            "window.StatusBar"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -35,7 +42,8 @@ module.exports.metadata =
 {
     "org.apache.cordova.device": "0.3.0",
     "org.apache.cordova.network-information": "0.2.15",
-    "org.apache.cordova.plugin.ActivityIndicator": "1.0.0"
+    "org.apache.cordova.plugin.ActivityIndicator": "1.0.0",
+    "org.apache.cordova.statusbar": "0.1.10"
 }
 // BOTTOM OF METADATA
 });
