@@ -9,6 +9,37 @@ var app = {
             $('#start-date').val(moment().format('YYYY-MM-DD'));
             $('#end-date').val(moment().add(1, 'weeks').format('YYYY-MM-DD'));
         });
+
+        $(function() {
+            $('#sign-in').click(function() {
+                if (window.localStorage.getItem('user') != null) {
+                    var user = {
+                        login: $('#signin-login').val(),
+                        password: $('#signin-password').val()
+                    };
+
+                    var localUser = JSON.parse(window.localStorage.getItem('user'));
+
+                    if (localUser.login == user.login && localUser.password == user.password) {
+                        $.mobile.changePage('#Form');
+                    } else {
+                        alert('Zły login lub hasło! Spróbuj jeszcze raz...');
+                    };
+                } else {
+                    alert('Nie masz konta! Zarejestruj się!');
+                };
+            });
+
+            $('#sign-up').click(function() {
+                var user = {
+                    login: $('#signup-login').val(),
+                    password: $('#signup-password').val()
+                }
+
+                window.localStorage.setItem('user', JSON.stringify(user));
+                $.mobile.changePage('#Form');
+            });
+        });
     },
     // Bind Event Listeners
     //
