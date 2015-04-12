@@ -42,13 +42,13 @@ var calendar = {
       eventLimit: true,
       events: data,
       eventClick: function(event) {
-        var popup = $("#popup-result");
+        var popup = $("#popup-result.content");
         var date = new Date(event.start);
 
         contentHtml = '<h4>' + moment(date).format('DD.MM.YYYY, h:mm') + '<h4>';
         contentHtml += event.description;
 
-        popup.html(contentHtml).popup( 'open' );
+        popup.html(contentHtml).popup('open');
       }
     })
 }
