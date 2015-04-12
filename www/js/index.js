@@ -127,7 +127,7 @@ var app = {
             setTimeout(function() {
                 $wrapper.empty().append('<div id="calendar"></div>');
                 calendar.bind($('#calendar'), dates);
-            }, 500);
+            }, 900);
         });
     }
 };
