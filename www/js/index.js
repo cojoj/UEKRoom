@@ -2,6 +2,13 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        this.loadUi();
+    },
+    loadUi: function() {
+        $(function() {
+            $('#start-date').val(moment().format('YYYY-MM-DD'));
+            $('#end-date').val(moment().add(1, 'weeks').format('YYYY-MM-DD'));
+        });
     },
     // Bind Event Listeners
     //
