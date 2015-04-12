@@ -24,16 +24,17 @@
    </style>
 </head>
 <body>
-    <div data-role="page" id="Form">
-        <div data-role="header">
-            <h4>Szukaj wolnej sali</h4>
-            <a href="#info-popup" data-rel="popup" data-role="button" class="ui-btn-right" data-icon="info" data-transition="pop"> Info</a>
-            <div data-role="popup" id="info-popup" data-arrow="true">
-                <h4>Informacje o urządzeniu: </h4>
-                <hr>
-                <p id="info"></p>
-            </div>
-        </div>
+    <div data-role="page" id="Form"> 
+        <div data-role="header" data-position="fixed">
+            <h1>Szukaj wolnej sali</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Form" class="ui-btn-active ui-state-persist">Wyszukiwarka</a></li>
+                    <li><a href="#Settings">Ustawienia</a></li>
+                    <li><a href="#Authors">Autorzy</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /header -->
         <div data-role="content">
             <label for="start-date">Od:</label>
             <input type="date" id="start-date" name="start-date">
@@ -43,20 +44,66 @@
             <label><input type="checkbox" id="include-labs" name="include-labs" name="checkbox-0" /> Uwzględnij pracownie komputerowe</label>
             <ul data-role="listview" data-filter="true" id="groups-list" data-filter-placeholder="Wyszukaj grupę"></ul>
         </div>
-        <div data-role="footer">
-            <h1 id="device-footer">Test: </h1>
+    </div><!-- /page -->
+
+    <div data-role="page" id="Settings">
+        <div data-role="header" data-position="fixed">
+            <h1>Ustawienia</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Form">Wyszukiwarka</a></li>
+                    <li><a href="#Settings" class="ui-btn-active ui-state-persist">Ustawienia</a></li>
+                    <li><a href="#Authors">Autorzy</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /header -->
+        <div data-role="content">
+            <h4>Zmiana wyglądu:<h3>
+            <select id="theme-select">
+                <option value="default">Domyślny</option>
+                <option value="orange">Pomarańczowy</option>
+            </select>
+            <h4>Informację o urządzeniu:</h4>
+            <p class="device-info">
+            </p>
+            <p class="device-position">
+            </p>
         </div>
-    </div>
+    </div><!-- /page -->
+
+    <div data-role="page" id="Authors">
+        <div data-role="header" data-position="fixed">
+            <h1>Autorzy</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#Form">Wyszukiwarka</a></li>
+                    <li><a href="#Settings">Ustawienia</a></li>
+                    <li><a href="#Authors" class="ui-btn-active ui-state-persist">Autorzy</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- /header -->
+        <div data-role="content">
+            <h4>Lista autorów</h4>
+            <ul>
+                <li>Maciej Komorowski</li>
+                <li>Mateusz Zając</li>
+            </ul>
+            <p>
+                Kraków, 2015
+            </p>
+        </div>
+    </div><!-- /page -->
 
     <div data-role="page" id="Result">
         <div data-role="header">
             <h1>Dostępne sale</h1>
-        </div>
+            <a href="#Form" data-icon="back">Wróć</a>
+        </div><!-- /header -->
         <div data-role="content">
             <p>Resultat</p>
             <div id="calendar">Brak wyników</div>
         </div>
-    </div>
+    </div><!-- /page -->
 
 </body>
 </html>
