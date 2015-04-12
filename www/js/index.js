@@ -13,6 +13,7 @@ var app = {
     // deviceready Event Handler
     onDeviceReady: function() {
         app.printDeviceInfo();
+        app.printLocationInfo();
         app.fetchGroups();
     },
     checkInternetConnection: function(callback) {
@@ -24,6 +25,13 @@ var app = {
         } else {
             callback();
         };
+    },
+    printLocationInfo: function() {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            $('#info').append('<p><b>Lokalizacja: </b>' + position.coords.latitude + ', ' + position.coords.longitude + '</p>');
+        }, function() {
+            $('#info').append('<p><b>Lokalizacja: </b>Nie udało się zlokalizować urządzenia</p>');
+        });
     },
     printDeviceInfo: function() {
         var model = '<p><b>Model: </b>' + device.model + '</p>';
