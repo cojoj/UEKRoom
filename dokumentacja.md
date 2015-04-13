@@ -49,11 +49,11 @@ Jeżeli użytkownikowi uda się zalogować lub w przypadku nowego użytkownka - 
 
 Główny ekran aplikacji służy do wyszukiwania wolnych sal dla podanych kryteriów, którymi są:
 
-- **dzień początkowy**
-- **dzień końcowy**
-- **sale wykładowe na terenie Krakowa** (odhaczenie tej opcji będzie również wyszukiwało sal w ośrodkach zamiejscowych)
-- **uwzglednienie laboratoriów komputerowych** w wynikach wyszukiwnia
-- **grupa dziekańska, przedmiot do wyboru lub lektorat**
+- **Dzień początkowy**.
+- **Dzień końcowy**.
+- **Dale wykładowe na terenie Krakowa** (odhaczenie tej opcji będzie również wyszukiwało sal w ośrodkach zamiejscowych).
+- **Uwzglednienie laboratoriów komputerowych** w wynikach wyszukiwnia.
+- **Grupa dziekańska, przedmiot do wyboru lub lektorat**.
 
 Ekran ten prezentuje się w następujący sposób:
 
@@ -76,9 +76,42 @@ Kiedy grupy zostaną pobrane, przetworzone oraz zapisane do pamięci `localStora
 
 ![](doc_assets/filter.png)
 
-W celu wyświetlenia dostępnych sal dla określonych kryteriów wyszukiwania użytkownik musi nacisnąć na komórkę z grupą, dla które wysłanie takiego zapytania ma sie odbyć. Naciśnięcie komórki spowoduje przesłanie odpowiedniego zapytania do serwera, o tym fakcie użytkownik zostanie powiadomiony poprzez komponent ładowania podobny do tego, który został wyświetlony w przypadku pierwszego pobrania listy grup z serwera. Po pomyślnym zakończeniu tej operacji użytkownik automatycznie zostanie przeniesiony do widoku, w którym będzie mógł zobaczyć wyniki tego zapytania.
+W celu wyświetlenia dostępnych sal dla określonych kryteriów wyszukiwania użytkownik musi nacisnąć na komórkę z grupą, dla które wysłanie takiego zapytania ma sie odbyć. Naciśnięcie komórki spowoduje przesłanie odpowiedniego zapytania do serwera, o tym fakcie użytkownik zostanie powiadomiony poprzez komponent ładowania podobny do tego, który został wyświetlony w przypadku pierwszego pobrania listy grup z serwera. Po pomyślnym zakończeniu tej operacji użytkownik automatycznie zostanie przeniesiony do widoku, w którym będzie mógł zobaczyć wyniki tego zapytania. Jeżeli urządzenie nie ma aktualnie dostępu do sieci internet (WiFi lub GSM) użytkownik zostanie o tym fakcie poinformowany odpowiednim komunikatem. Do sprawdzenia połączenia wykorzystywany jest plugin [Network Information](http://plugins.cordova.io/#/package/org.apache.cordova.network-information).
+
+![](doc_assets/no_internet.jpg)
 
 #### Widok kalendarza z wolnymi salami
 
+Określenie wszystkich parametrów zapytania oraz naciśniecię na komórkę z grupą spowoduje, że na ekranie urządzania pojawi się **kalendarz tygodniowy** z zaznaczonymi wolnymi salami oraz z godzinami, w których określona grupa nie posiada zajęć. Widok tygodniowy oferuje przejrzysty format danych, dzięki czemu w łatwy sposób można na nim znaleźć interesujące wydarzenia.
+W przypadku wyboru zakresu czasu dłuższego niż jeden tydzień, użytkownik może zmienić zestaw wyświetlanych danych poprzez naciśnięcie odpowiedniego przycisku **Następny** lub **Poprzedni**.
 
+![](doc_assets/calendar_load.jpg) ![](doc_assets/calendar.jpg)
 
+Użytkownik może przeprowadzać pewne interakcje z kalendarzem, a mianowiecie może on nacisnąć na konkretne wydarzenie odnotowane w kalendarzu, co spowoduje wyświetlenie okna `popup` wraz z listą dostępnych sal w określonej godzienie oraz terminie, co przedstawia poniższy zrzut ekranu:
+
+![](doc_assets/popup.jpg)
+
+#### Zakładka ustwienia
+
+Nawigacja wewnątrz aplikacji odbywa się z wykorzystaniem komponentu frameworka **jQuery Mobile**, który nazywa się [`navbar`](https://demos.jquerymobile.com/1.2.0/docs/toolbars/docs-navbar.html). Dzięki niemu użytkownik może w łatwy sposób przełączać się pomiędzy poszczególnymi stronami aplikacji.
+Strona, która zostanie omówiona w tym podrozdziale dotyczy **ustawień** aplikacji oraz przedstawienia możliwości natywnych rozwiązań wewnątrz frameworka **Cordova**.
+
+![](doc_assets/settings.jpg)
+
+Omawiana zakładka pozwala na dwie rzeczy:
+
+- Zmiana **stylu** kolorystycznego aplikacji.
+- Podgląd **informacji o urządzeniu**, na którym aplikacja została uruchomiona oraz podgląd **współrzędnych geograficznych**, w których znajduje się urządzenie.
+
+Pierwsza funkcjonalność pozwala w łatwy sposób zmienić domyślny (szary) schemat kolorów aplikacji na schemat ciemny (grafitowy/czarny).
+
+![](doc_assets/theme.jpg) ![](doc_assets/black.jpg)
+
+**Informacje o urządzeniu** są wyświetlane przy użyciu pluginu [Device](http://plugins.cordova.io/#/package/org.apache.cordova.device). W sród nich można znaleźć informacje takie jak: **model urządzenia**, **platforma** (system operacyjny) czy numer **UUID** urządzenia.
+Dodatkową informacją, która jest wyświetlana wraz z iformacjami o urządzeniu jest bieżąca lokalizacja geograficzna urządzenia. Funkcjonalność ta realizowana jest przy pomocy pluginu [Geolocation](http://plugins.cordova.io/#/package/org.apache.cordova.geolocation).
+
+#### Zakładka autorzy
+
+W zakładce tej zaprezentowana jest jedynie lista autorów aplikacji. 
+
+![](doc_assets/authors.jpg)
