@@ -131,7 +131,7 @@ var app = {
             setTimeout(function() {
                 $wrapper.empty().append('<div id="calendar"></div>');
                 calendar.bind($('#calendar'), dates);
-            }, 900);
+            }, 1200);
         });
     }
 };
