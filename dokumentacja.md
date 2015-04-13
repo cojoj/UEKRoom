@@ -4,9 +4,9 @@
 
 **UEKRoom** jest hybrydową aplikacją na urządzenia mobilne (iOS oraz Android), która została stworzona przy wykorzystaniu frameworka [Cordova](https://cordova.apache.org) oraz ze wsparciem wizualnym ze strony frameworka [jQuery Mobile](https://jquerymobile.com).
 
-Głównym celem tej aplikacji jest dostarczenie możliwości sprawdzenia **dostępnych** sal wykładowych w podanym **terminie** oraz dla podanej **grupy dziekańskiej** lub **lektoratu**. Możliwości te są skierowane dla studentów, wykładowców oraz pracowników [Uniwersytetu Ekonomicznego w Krakowie](http://uekwww.uek.krakow.pl).
+Głównym celem tej aplikacji jest dostarczenie możliwości sprawdzenia **dostępnych** sal wykładowych w podanym **terminie** oraz dla podanej **grupy dziekańskiej** lub **grupy językowej**. Możliwości te są skierowane dla studentów, wykładowców oraz pracowników [Uniwersytetu Ekonomicznego w Krakowie](http://uekwww.uek.krakow.pl).
 
-Aplikacja została stworzona w opraciu o **API** dostarczane przez [Koło Naukowe >DEV](http://dev.uek.krakow.pl) działające przy UEK w Krakowie. Wspomniane API jest cześcią większego projektu - **devPlan**, o którym można uzyskać więcej informacji na jego [stronie internetowej](http://dev.uek.krakow.pl). Oczywiscie, API musiało zostać wzbogacone o odpowiednie zapytania do bazy danych, które zwracają wyniki wykorzystywane w aplikacji **UEKRoom**.
+Aplikacja została stworzona w opraciu o **API** dostarczane przez [Koło Naukowe >DEV](http://dev.uek.krakow.pl) działające przy UEK w Krakowie. Wspomniane API jest częścią większego projektu - **devPlan**, o którym można uzyskać więcej informacji na jego [stronie internetowej](http://dev.uek.krakow.pl). Oczywiście, API musiało zostać wzbogacone o odpowiednie zapytania do bazy danych, które zwracają wyniki wykorzystywane w aplikacji **UEKRoom**.
 
 **UEKRoom** został stworzony jako projekt zaliczeniowy z przedmiotu _Zaawansowane Aplikacje Internetowe_, a jego twórcami są:
 
@@ -19,7 +19,7 @@ Całość projektu (kod źródłowy oraz dokumentacja) jest dostępna na serwisi
 
 #### Uruchomienie aplikacji
 
-Uruchomienie aplikacji **UEKRoom** następuje poprzez nacisnięcie jej ikony na ekranie startowym urządzenia. Przykładowy ekran startowy urządzenia z iOS oraz z zainstalowaną aplikacją **UEKRoom**:
+Uruchomienie aplikacji **UEKRoom** następuje poprzez naciśniecie jej ikony na ekranie startowym urządzenia. Przykładowy ekran startowy urządzenia z iOS oraz z zainstalowaną aplikacją **UEKRoom**:
 
 ![](doc_assets/icon.png)
 
@@ -29,11 +29,11 @@ Po uruchomieniu aplikacji na ekranie urządzenia pojawi się **ekran startowy** 
 
 #### Logowanie oraz rejestracja
 
-Każdorazowe uruchomienie aplikacji zobowiązuje użytkownika do **zalogowania się** na wcześniej założonym koncie. Zalogowanie następuje poprzez podanie prawidłowego _loginu_ oraz _hasła_, które są zapisywane w pamięci `localStorage`.
+Każdorazowe uruchomienie aplikacji zobowiązuje użytkownika do **zalogowania się** na wcześniej założonym koncie. Zalogowanie następuje poprzez podanie prawidłowego _loginu_ oraz _hasła_, które są zapisywane w pamięci przeglądarki `localStorage`.
 
 ![](doc_assets/login.png)
 
-W przypadku podania **błednego** loginu lub hasła oczom użytkownika pojawi się okno dialogowe informujące o tym fakcie. Również w przypadku, kiedy w aplikacji nie ma zapisanych infrmacji o żadnym użytkownik wyświetlony zostanie odpowiedni komunikat informujący o tym fakcie.
+W przypadku podania **błednego** loginu lub hasła oczom użytkownika pojawi się okno dialogowe informujące o tym fakcie. Również w przypadku, kiedy w aplikacji nie ma zapisanych informacji o żadnym użytkowniku, zostanie wyświetlony odpowiedni komunikat informujący o tym fakcie.
 
 Naciśnięcie pola: 
 >Nie masz jeszcze konta? **Zarejestruj się!**
@@ -43,7 +43,7 @@ Podobnie jak w przypadku ekranu logowania, użytkownik musi podać _login_ oraz 
 
 ![](doc_assets/register.png)
 
-Jeżeli użytkownikowi uda się zalogować lub w przypadku nowego użytkownka - zarejestrować, to automatycznie zostanie przeniesiony do **głównego okna aplikacji**.
+Jeżeli użytkownikowi uda się zalogować lub w przypadku nowego użytkownika - zarejestrować, to automatycznie zostanie przeniesiony do **głównego okna aplikacji**.
 
 #### Wyszukiwanie wolnych sal
 
@@ -52,7 +52,7 @@ Główny ekran aplikacji służy do wyszukiwania wolnych sal dla podanych kryter
 - **Dzień początkowy**.
 - **Dzień końcowy**.
 - **Dale wykładowe na terenie Krakowa** (odhaczenie tej opcji będzie również wyszukiwało sal w ośrodkach zamiejscowych).
-- **Uwzglednienie laboratoriów komputerowych** w wynikach wyszukiwnia.
+- **Uwzględnienie laboratoriów komputerowych** w wynikach wyszukiwania.
 - **Grupa dziekańska, przedmiot do wyboru lub lektorat**.
 
 Ekran ten prezentuje się w następujący sposób:
@@ -65,29 +65,29 @@ Zakres dat, w którym szukane będą wolne sale określany jest przy użyciu nat
 
 Kolejne dwie opcje filtrowania sal dostępny są przy użyciu _checkbox_'ów, a ich działanie jest następujące:
 
-- **Wyszukaj sale tylko w Krakowie** - jeżeli ta opcja jest zaznaczona, aplikacja będzie wyszukiwała sal dostępnych wyłącznie na terenie miasta Kraków. Odznaczenie tej opcji spowoduje zwiększenie obrębu wyszukiwnia dostępnych sal również do **ZOD** (Zamiejscowych Ośrodków Dydaktycznych).
-- **Uwzględnij pracownie komputerowe** - zaznaczenie tej opcji pozwoli aplikacji dołączyć do wyników wyszukiwania sal również te, ktore są laboratoriami komputerowymi.
+- **Wyszukaj sale tylko w Krakowie** - jeżeli ta opcja jest zaznaczona, aplikacja będzie wyszukiwała sal dostępnych wyłącznie na terenie miasta Krakowa. Odznaczenie tej opcji spowoduje zwiększenie obrębu wyszukiwania dostępnych sal również do **ZOD-ów** (Zamiejscowych Ośrodków Dydaktycznych).
+- **Uwzględnij pracownie komputerowe** - zaznaczenie tej opcji pozwoli aplikacji dołączyć do wyników wyszukiwania sal również te, które są laboratoriami komputerowymi.
 
-Ostatnim komponentem służącym do określania kryteriów wyszukiwania jest grupa, dla której stworzona ma być lista dostępnych sal. Przy pierwszym uruchomieniu aplikacji lista ta musi zostać pobrana z serwera **KN >DEV**, a następnie jest ona zapisywania w pamięci `localStorage` dzięki czmeu nie musi ona być pobierana kolejny raz. Lista grup działających przy UEK w Krakowie liczy ok. 4000 rekordów, więc pobranie i przetworzenie ich wszystkich może spowodować pewne problemy dla aplikacji hybrydowej w zwiazku z czym użytkownik zostanie poinformowany o fakcie pobierania grup poprzez następujący ekran:
+Ostatnim komponentem służącym do określania kryteriów wyszukiwania jest grupa, dla której stworzona ma być lista dostępnych sal. Przy pierwszym uruchomieniu aplikacji lista ta musi zostać pobrana z serwera **KN >DEV**, a następnie jest ona zapisywania w pamięci `localStorage` dzięki czemu nie musi ona być pobierana kolejny raz. Lista grup działających przy UEK w Krakowie liczy ok. 4000 rekordów, więc pobranie i przetworzenie ich wszystkich może spowodować pewne problemy dla aplikacji hybrydowej, w związku z czym użytkownik zostanie poinformowany o fakcie pobierania grup poprzez następujący ekran:
 
 ![](doc_assets/group_download.png)
 
-Kiedy grupy zostaną pobrane, przetworzone oraz zapisane do pamięci `localStorage` użytkownik może prześć do łatwego filtrowania poprzez wpisane początkowych znaków grupy, dla której chce otrzymać wyniki wyszukiwania. Poniżej przedstawiono przykładowy zrzut ekranu z wyszukiwania grupy przy użyciu ciagu znaków `Krduis`:
+Kiedy grupy zostaną pobrane, przetworzone oraz zapisane do pamięci `localStorage` użytkownik może przejść do łatwego filtrowania poprzez wpisane początkowych znaków grupy, dla której chce otrzymać wyniki wyszukiwania. Poniżej przedstawiono przykładowy zrzut ekranu z wyszukiwania grupy przy użyciu ciągu znaków `Krduis`:
 
 ![](doc_assets/filter.png)
 
-W celu wyświetlenia dostępnych sal dla określonych kryteriów wyszukiwania użytkownik musi nacisnąć na komórkę z grupą, dla które wysłanie takiego zapytania ma sie odbyć. Naciśnięcie komórki spowoduje przesłanie odpowiedniego zapytania do serwera, o tym fakcie użytkownik zostanie powiadomiony poprzez komponent ładowania podobny do tego, który został wyświetlony w przypadku pierwszego pobrania listy grup z serwera. Po pomyślnym zakończeniu tej operacji użytkownik automatycznie zostanie przeniesiony do widoku, w którym będzie mógł zobaczyć wyniki tego zapytania. Jeżeli urządzenie nie ma aktualnie dostępu do sieci internet (WiFi lub GSM) użytkownik zostanie o tym fakcie poinformowany odpowiednim komunikatem. Do sprawdzenia połączenia wykorzystywany jest plugin [Network Information](http://plugins.cordova.io/#/package/org.apache.cordova.network-information).
+W celu wyświetlenia dostępnych sal dla określonych kryteriów wyszukiwania użytkownik musi nacisnąć na komórkę z grupą, dla które wysłanie takiego zapytania ma się odbyć. Naciśnięcie komórki spowoduje przesłanie odpowiedniego zapytania do serwera, o tym fakcie użytkownik zostanie powiadomiony poprzez komponent ładowania podobny do tego, który został wyświetlony w przypadku pierwszego pobrania listy grup z serwera. Po pomyślnym zakończeniu tej operacji użytkownik automatycznie zostanie przeniesiony do widoku, w którym będzie mógł zobaczyć wyniki tego zapytania. Jeżeli urządzenie nie ma aktualnie dostępu do sieci internet (WiFi lub GSM) użytkownik zostanie o tym fakcie poinformowany odpowiednim komunikatem. Do sprawdzenia połączenia wykorzystywany jest plugin [Network Information](http://plugins.cordova.io/#/package/org.apache.cordova.network-information).
 
 ![](doc_assets/no_internet.jpg)
 
 #### Widok kalendarza z wolnymi salami
 
-Określenie wszystkich parametrów zapytania oraz naciśniecię na komórkę z grupą spowoduje, że na ekranie urządzania pojawi się **kalendarz tygodniowy** z zaznaczonymi wolnymi salami oraz z godzinami, w których określona grupa nie posiada zajęć. Widok tygodniowy oferuje przejrzysty format danych, dzięki czemu w łatwy sposób można na nim znaleźć interesujące wydarzenia.
+Określenie wszystkich parametrów zapytania oraz naciśniecie na komórkę z grupą spowoduje, że na ekranie urządzania pojawi się **kalendarz tygodniowy** z zaznaczonymi wolnymi salami oraz z godzinami, w których określona grupa nie posiada zajęć. Widok tygodniowy oferuje przejrzysty format danych, dzięki czemu w łatwy sposób można na nim znaleźć dogodny dla nas termin.
 W przypadku wyboru zakresu czasu dłuższego niż jeden tydzień, użytkownik może zmienić zestaw wyświetlanych danych poprzez naciśnięcie odpowiedniego przycisku **Następny** lub **Poprzedni**.
 
 ![](doc_assets/calendar_load.jpg) ![](doc_assets/calendar.jpg)
 
-Użytkownik może przeprowadzać pewne interakcje z kalendarzem, a mianowiecie może on nacisnąć na konkretne wydarzenie odnotowane w kalendarzu, co spowoduje wyświetlenie okna `popup` wraz z listą dostępnych sal w określonej godzienie oraz terminie, co przedstawia poniższy zrzut ekranu:
+Użytkownik może przeprowadzać pewne interakcje z kalendarzem, a mianowicie może on nacisnąć na konkretne wydarzenie odnotowane w kalendarzu, co spowoduje wyświetlenie okna `popup` wraz z listą dostępnych sal w określonej godzinie oraz terminie, co przedstawia poniższy zrzut ekranu:
 
 ![](doc_assets/popup.jpg)
 
@@ -107,8 +107,8 @@ Pierwsza funkcjonalność pozwala w łatwy sposób zmienić domyślny (szary) sc
 
 ![](doc_assets/theme.jpg) ![](doc_assets/black.jpg)
 
-**Informacje o urządzeniu** są wyświetlane przy użyciu pluginu [Device](http://plugins.cordova.io/#/package/org.apache.cordova.device). W sród nich można znaleźć informacje takie jak: **model urządzenia**, **platforma** (system operacyjny) czy numer **UUID** urządzenia.
-Dodatkową informacją, która jest wyświetlana wraz z iformacjami o urządzeniu jest bieżąca lokalizacja geograficzna urządzenia. Funkcjonalność ta realizowana jest przy pomocy pluginu [Geolocation](http://plugins.cordova.io/#/package/org.apache.cordova.geolocation).
+**Informacje o urządzeniu** są wyświetlane przy użyciu pluginu [Device](http://plugins.cordova.io/#/package/org.apache.cordova.device). Wśród nich można znaleźć informacje takie jak: **model urządzenia**, **platforma** (system operacyjny) czy numer **UUID** urządzenia.
+Dodatkową informacją, która jest wyświetlana wraz z informacjami o urządzeniu jest bieżąca lokalizacja geograficzna urządzenia. Funkcjonalność ta realizowana jest przy pomocy pluginu [Geolocation](http://plugins.cordova.io/#/package/org.apache.cordova.geolocation).
 
 #### Zakładka autorzy
 
