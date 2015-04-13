@@ -22,10 +22,12 @@ var devPlan = {
       day_data.description = 'Wolne sale: <br><br>';
       parsedData.push(day_data);
       var places = day_data.available_places;
+      var excludeLabs = !params['include_labs'] == '1';
 
-      for (var j = 0; j < places.length; j++)
+      for (var j in places)
       {
-        if (params['include_labs'] == '1' && !places[j].short_location.contains('lab.'))
+        var place = places[j];
+        if (place['short_location'].match(/lab\./) && excludeLabs)
         {
           continue;
         }

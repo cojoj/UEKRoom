@@ -45,7 +45,7 @@ var calendar = {
         var popup = $("#popup-result");
         var date = new Date(event.start);
 
-        contentHtml = '<h4>' + moment(date).format('DD.MM.YYYY, h:mm') + '<h4>';
+        contentHtml = '<h4>' + moment(date).format('DD.MM.YYYY, hh:mm') + '<h4>';
         contentHtml += event.description;
 
         popup.children('.content').html(contentHtml);
