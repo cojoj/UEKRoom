@@ -25,6 +25,9 @@ var app = {
 
                     if (localUser.login == user.login && localUser.password == user.password) {
                         $.mobile.changePage('#Form');
+                        app.printDeviceInfo();
+                        app.printLocationInfo();
+                        app.fetchGroups();
                     } else {
                         alert('Zły login lub hasło! Spróbuj jeszcze raz...');
                     };
@@ -41,6 +44,9 @@ var app = {
 
                 window.localStorage.setItem('user', JSON.stringify(user));
                 $.mobile.changePage('#Form');
+                app.printDeviceInfo();
+                app.printLocationInfo();
+                app.fetchGroups();
             });
 
         });
@@ -54,9 +60,7 @@ var app = {
     },
     // deviceready Event Handler
     onDeviceReady: function() {
-        app.printDeviceInfo();
-        app.printLocationInfo();
-        app.fetchGroups();
+        //
     },
     checkInternetConnection: function(callback) {
         var networkState = navigator.connection.type;

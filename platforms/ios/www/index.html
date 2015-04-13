@@ -3,27 +3,47 @@
 <head>
     <meta charset="utf-8" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.css" />
-    <link rel="stylesheet" href="http://cdn.rawgit.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script type="text/javascript" src="http://cdn.rawgit.com/jquery/jquery-ui/1.10.4/ui/jquery.ui.datepicker.js"></script>
-    <script type="text/javascript" id="mobile-datepicker" src="http://cdn.rawgit.com/arschmitz/jquery-mobile-datepicker-wrapper/v0.1.1/jquery.mobile.datepicker.js"></script>
+    <link rel="stylesheet" href="css/devroom.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+    <link type="text/css" rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.css" />
+    <link type="text/css" rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="http://momentjs.com/downloads/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/devplan.js"></script>
     <script type="text/javascript" src="js/calendar.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <title>UEKRoom</title>
-    <style>
-        .ui-datepicker {
-           z-index: 9999 !important;   
-       }
-   </style>
 </head>
 <body>
+    <div data-role="page" id="SignIn">
+        <div data-role="header">
+            <h4>Logowanie</h4>
+        </div>
+        <div data-role="content">
+            <label for="login">Login: </label>
+            <input type="text" id="signin-login" name="login" placeholder="Wpisz login...">
+            <label for="password">Hasło: </label>
+            <input type="password" id="signin-password" name="password" placeholder="Wpisz hasło...">
+            <input type="button" id="sign-in" value="Zaloguj">
+            <div align="center">Nie masz jeszcze konta? <a href="#SignUp">Zarejestruj się!</a></div>
+        </div>
+    </div><!-- /page -->
+    <div data-role="page" id="SignUp">
+        <div data-role="header">
+            <a href="#SignIn" data-icon="back"> Logowanie</a>
+            <h4>Rejestracja</h4>
+        </div>
+        <div data-role="content">
+            <label for="login">Login: </label>
+            <input type="text" id="signup-login" name="login" placeholder="Wpisz login...">
+            <label for="password">Hasło: </label>
+            <input type="password" id="signup-password" name="password" placeholder="Wpisz hasło...">
+            <input type="button" id="sign-up" value="Zarejestruj">
+        </div>
+    </div><!-- /page -->
     <div data-role="page" id="Form"> 
         <div data-role="header" data-position="fixed">
             <h1>Szukaj wolnej sali</h1>
@@ -45,7 +65,6 @@
             <ul data-role="listview" data-filter="true" id="groups-list" data-filter-placeholder="Wyszukaj grupę"></ul>
         </div>
     </div><!-- /page -->
-
     <div data-role="page" id="Settings">
         <div data-role="header" data-position="fixed">
             <h1>Ustawienia</h1>
@@ -59,51 +78,53 @@
         </div><!-- /header -->
         <div data-role="content">
             <h4>Zmiana wyglądu:<h3>
-            <select id="theme-select">
-                <option value="default">Domyślny</option>
-                <option value="orange">Pomarańczowy</option>
-            </select>
-            <h4>Informację o urządzeniu:</h4>
-            <p class="device-info">
-            </p>
-            <p class="device-position">
-            </p>
-        </div>
-    </div><!-- /page -->
-
-    <div data-role="page" id="Authors">
-        <div data-role="header" data-position="fixed">
-            <h1>Autorzy</h1>
-            <div data-role="navbar">
+                <select id="theme-select">
+                    <option value="a">Domyślny</option>
+                    <option value="b">Ciemny</option>
+                </select>
+                <h4>Informację o urządzeniu:</h4>
+                <p class="device-info"></p>
+                <p class="device-position"></p>
+            </div><!-- /content -->
+        </div><!-- /page -->
+        <div data-role="page" id="Authors">
+            <div data-role="header" data-position="fixed">
+                <h1>Autorzy</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#Form">Wyszukiwarka</a></li>
+                        <li><a href="#Settings">Ustawienia</a></li>
+                        <li><a href="#Authors" class="ui-btn-active ui-state-persist">Autorzy</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+            <div data-role="content">
+                <h4>Lista autorów</h4>
                 <ul>
-                    <li><a href="#Form">Wyszukiwarka</a></li>
-                    <li><a href="#Settings">Ustawienia</a></li>
-                    <li><a href="#Authors" class="ui-btn-active ui-state-persist">Autorzy</a></li>
+                    <li>Maciej Komorowski</li>
+                    <li>Mateusz Zając</li>
                 </ul>
-            </div><!-- /navbar -->
-        </div><!-- /header -->
-        <div data-role="content">
-            <h4>Lista autorów</h4>
-            <ul>
-                <li>Maciej Komorowski</li>
-                <li>Mateusz Zając</li>
-            </ul>
-            <p>
-                Kraków, 2015
-            </p>
-        </div>
-    </div><!-- /page -->
+                <p>
+                    Kraków, 2015
+                </p>
+            </div><!-- /content -->
+        </div><!-- /page -->
 
-    <div data-role="page" id="Result">
-        <div data-role="header">
-            <h1>Dostępne sale</h1>
-            <a href="#Form" data-icon="back">Wróć</a>
-        </div><!-- /header -->
-        <div data-role="content">
-            <p>Resultat</p>
-            <div id="calendar">Brak wyników</div>
-        </div>
-    </div><!-- /page -->
+        <div data-role="page" id="Result">
+            <div data-role="header">
+                <h1>Dostępne sale</h1>
+                <a href="#Form" data-icon="back">Wróć</a>
+            </div><!-- /header -->
+            <div data-role="content">
+                <div id="calendar-wrapper"></div>
+                <div data-role="popup" id="popup-result">
+                    <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+                    <div class="content">
+                        Brak wolnych sal
+                    </div>
+                </div>
+            </div>
+        </div><!-- /page -->
 
-</body>
-</html>
+    </body>
+    </html>
